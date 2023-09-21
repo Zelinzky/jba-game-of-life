@@ -1,0 +1,71 @@
+<div class="step-text">
+<p></p><h5 id="description">Description</h5><p>This is not a game in its usual meaning. The human player’s input just creates the initial state of the “universe.” After that, the game is completely deterministic, and one just observes the evolution of life forms, migration, and even socialization of primitive organisms.</p><p>The <a href="https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life" rel="noopener noreferrer nofollow" target="_blank">Game of Life</a> was described by John Conway in 1970. It came from a mathematical problem, and since 1970 it has attracted the interest of scientists in various fields: physics, biology, economics, and so on.</p><p>The most amazing feature of this game is its simplicity, leading to many more complex patterns.</p><p>Who knows, maybe this game touches something fundamental in this world?</p><p>In the first stage, you need to create a “map” of the universe in its first moment of existence ― the first generation.</p><p>The universe in this game looks like a grid in which each cell has one of two possible states: populated (alive) or not populated (dead).<br/>Before the game starts, the player should define the state of each cell. To make the first state of the universe, we will use randomness.<br/><br/>To move from the first cell to the last, you can use the <code class="language-go">rand.Intn(2)</code> from the <code class="language-go">"math/rand"</code> to define its state. Populate the cell as alive if <code class="language-go">rand.Intn(2)</code> returns 1, and dead if 0.</p><p>The first program should output a square matrix NxN: there must be N lines with N characters in each line. If there is an alive cell, place the letter ‘O’, otherwise, whitespace.<br/><br/>Input data is two numbers in one line. First is N (N&gt;0): the size of the universe. The second is S: a number that you should use as the seed for your Random object. Notice, that you should set the seed only once.</p><h5 id="examples">Examples</h5><p>The lines that start with <code class="language-go">&gt;</code> represent user input.</p><p><strong>Example 1:</strong></p><pre><code class="language-go">&gt; 4 4
+O OO
+OO O
+O O
+OO  </code></pre><p><strong>Example 2: </strong></p><pre><code class="language-go">&gt; 4 120
+O OO
+ O
+ OO
+OO  </code></pre><p><strong>Example 3:</strong></p><pre><code class="language-go">&gt; 10 10
+  OO  OOO
+OO O   OO
+   OOO
+ OO   O OO
+OO   OOOOO
+ OOOOO  O
+       OO
+ OOO O OOO
+OOO   O OO
+OOO O OO  </code></pre><p><strong>Example 4:</strong></p><pre><code class="language-go">&gt; 50 0
+  O O OO   OO   O   O   O   O O O  O  O O   OO   O
+    O O    OO  OO OOO  O OO OO   O O          O  O
+OOOO OO      OOOO  OO   OOOO O OO   OO   OOOOO O O
+O   O  O O     O OO  O     OOO OOO O   OO    O O  
+   O    O  O OO   O  OO O     O OOO    O OO OOO OO
+O O   O    O  OOO  O   OO OO O O OO OO    O  OO   
+  OO OO  OOOOO  OO OO OOO   OOO OO       OOOOO  O 
+   O OO OOO OOO OO O   OOO   O  OO O OOOO OO O  OO
+ OO O  OO   OOOOO      O  O   O OO  O   OOO OOO   
+ O OOO     OO     OO   OOO O O O O    OO   OOO OO 
+ OOOO OO O OOOO     O  O  O OO   O O   O   O   OO 
+O  O OO O O        OOO  O  OOO O O OOO OOOO    O O
+O    O OOOOO OO  OOO O O O   OOOOOO OOOOOOO O OO  
+OO  OO   OOO      OO  O   O O O O   OO OOO  OOO  O
+O  OOO  O O  O OO O OO O    OOO OOOO OO OOOO      
+ OOOOO  O OOO  O  OOOOO O O  O O O OOO  O   OOO   
+OO  OOOO     OO      O O OO  O   OO OO   OOOO OO  
+O  O  OOOOO OO OOO O OO  OOO   O O OO O   O OOOO O
+  OOO  O O OOOO   O   O    O   OOOOOO  O  O  O   O
+  OO  O  OOOO O   OO   O   O   O  O O     O   OO  
+O OO OO OO  OOOO  OO O  OO O OO   O  OOOO O   OO O
+O O    O OOOO O  OO  O    O  OOOO     OO  O O    O
+O   OO O     OO O OOO O OO   OO OOO   OO  O OO O  
+  OO  O O OOO     O O O OO  O O  O     O O O O    
+OO   OO O  OO    O O OO    O   OO OO OO O   OO O  
+OO OO    OO  OOOO OOOO OOO  O  O OO O O O   O OO  
+ O O OOO O  OOOOOO OO O O    O OO OO  O O  O   O O
+O  O  O  OOO   O OO O   O  OO O O  OO  OO  O O O O
+  O   OO O O   O  O  O OOO OOO   O  OOOOO   O  OO 
+ O OOO  OO  OO OO     O   OO  OO   OO  O O   O OO 
+O O OO O O O O OOOO O      OO OO OOOOO O O O O OO 
+OOOOO O OO  O OOO  O  O OO O   OOOOO OOO OO  OOOOO
+ OOO    OO O  OO  OOO   OOOOOOO   OOO OOOO OO   OO
+O  OOOOOO    OO  O  OO OO  OO OO  O OOO OOO O  O  
+OOOOO O    OO   O  OOO OO  OOO  OO  OOO O OOOOOOO 
+O OO   O    OO   OO O O  O OO O       O O OO    O 
+O OO  O   OO O O     OO O   OO O  OOOOOOOO  O  O O
+OOOO  OO OO  O     O    O          O     OO      O
+O   OO O  O OO OO  O OO    OO  OO       OO O O O  
+   O   OO  O   O OO   O  OO  OOO   O     OO O OOO 
+ O O O O     OOO  O OOO  O OOO    O O OOOO  OO    
+ O     O  OO O  OOO O     OOOO  O  OOOO  OOO OOOOO
+ O O OOOOOO  OOOO  OO OOOOOO  OOOOO OO  OO   OOO O
+  OO O OO O   OOOO OOO OOO OOO    OOO  OOO O      
+   O  OOO  OO   O     OO     OO   O  O  OO   O O  
+   O    O O O OO O OO OOO  OO     O O O  OOOO O OO
+OOO O  OO O O  O   O  OO   OOO  O  O OO       O   
+  O O O  OOO OO  OOOOOOOOO  O O   O OOO OOOO O  OO
+OO  OO O O  OOO  OO     O O O     O OOOOO O OO O  
+ O O   O OOOOO O O OO     OOO  O  OOO OOO      OO  </code></pre>
+</div>

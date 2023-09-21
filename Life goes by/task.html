@@ -1,0 +1,82 @@
+<div class="step-text">
+<p></p><h5 id="description"> Description</h5><p>Well, now the universe is created, and its laws work properly.</p><p>Let’s visualize evolution. In the previous stage, we could see only one generation. It would be better if the program displayed each generation sequentially, one after one.</p><p>For this stage, the only input is an <code class="java">int</code> number for the size of the universe. The universe for this stage is a square. Also, in this stage, you shouldn't set the seed to generate an initial position; it should be random.</p><p>The launched application must show evolution in progress. Output every generation to the console, one after one; you should output at least <code class="java">10</code> generations before stopping the application.</p><p>Below you can see an animated GIF with an example of the output of each generation one after one. Even though the previous generation output gets cleared before printing a new generation to the console, <em>take notice that to pass this stage your program <u>must not</u> clear the console before printing the next generation</em>:</p><p><img alt="Example of the output of each generation for Game of Life" height="584" src="https://ucarecdn.com/a8204501-93b5-4101-a07c-0db609b8a659/" width="488"/></p><p></p><div class="alert alert-primary"><p>After you have passed this stage, if you want to run your program locally and get the same output as the above-animated GIF, you can use the <code class="java">time.Sleep(500 * time.Millisecond)</code> line to make your program pause for 500ms after printing one generation.<br/>And after the 500ms pause, you can use the <code class="java">fmt.Print("\033[H\033[2J")</code> statement to clear the console before printing the next generation.</p></div><p></p><h5 id="examples">Examples</h5><p>The lines that start with <code class="java">&gt;</code> represent user input.</p><p>As previously mentioned, to pass this stage, your program must print all generations sequentially without any pauses and without clearing the console between each generation output!</p><p><strong>Example 1:</strong></p><pre><code class="language-no-highlight">&gt; 6
+Generation #1
+Alive: 13
+OO O
+     O
+     O
+O  OO
+OO  O
+ OO
+Generation #2
+Alive: 14
+OO
+    OO
+O    O
+OO OO
+O   O
+   O O
+Generation #3
+Alive: 14
+O
+ O  O
+ O O
+ O OO
+OOO
+ O  OO
+Generation #4
+Alive: 13
+OO  O
+OOO
+OO O
+   OO
+
+  O  O
+Generation #5
+Alive: 14
+   O
+   O
+O  OOO
+  OOO
+   OO
+OO   O
+Generation #6
+Alive: 14
+O O O
+  OO O
+     O
+  O
+OO
+O OO O
+Generation #7
+Alive: 17
+O
+OOOO O
+  OOO
+OO
+O  O O
+  OOO
+Generation #8
+Alive: 14
+O
+O    O
+    O
+OO
+O  O O
+OOOOO
+Generation #9
+Alive: 13
+  OOO
+O    O
+ O
+OO  O
+   O
+  OOO
+Generation #10
+Alive: 14
+ OO
+OOOOOO
+ O
+OOO
+ O   O</code></pre>
+</div>
